@@ -8,7 +8,8 @@ RUN apt-get update --fix-missing && apt-get install -y \
     net-tools \
     iptables \
     dnsmasq \
-    vim
+    vim \
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ADD hostapd.conf /etc/hostapd/hostapd.conf
 ADD hostapd /etc/default/hostapd
